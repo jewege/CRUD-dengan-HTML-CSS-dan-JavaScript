@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>html CRUD with JavaScript</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <h1>Tambah Data Karyawan MY-COMPANY</h1>
+  <table>
+    <tr>
+      <td>
+        <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+          <div>
+            <label>Nama Lengkap*</label><label class="validation-error hide" id="fullNameValidationError">This field is
+              required.</label>
+            <input type="text" name="fullName" id="fullName" maxlength="25" />
+          </div>
+          <div>
+            <label>Id Karyawan</label>
+            <input type="text" name="empCode" id="empCode" maxlength="8" />
+          </div>
+          <div>
+            <label>Jenis Kelamin</label>
+            <select name="jenisKelamin" id="jenisKelamin">
+              <option value="" disabled selected></option>
+              <option value="Laki-laki">Laki-Laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+          <div>
+            <label>Jumlah Gaji / bln</label>
+            <input type="text" name="salary" id="salary" maxlength="10" />
+          </div>
+
+          <div>
+            <label>Kota</label>
+            <input type="text" name="city" id="city" maxlength="17" />
+          </div>
+          <div class="form-action-buttons">
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </td>
+    </tr>
+  </table>
+  <table class="list" id="employeeList">
+    <thead>
+      <tr>
+        <th>Nama Lengkap</th>
+        <th>Id Karyawan</th>
+        <th>Jenis Kelamin</th>
+        <th>Jumlah Gaji</th>
+        <th>Kota</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script src="script.js"></script>
+</body>
+
+</html>
